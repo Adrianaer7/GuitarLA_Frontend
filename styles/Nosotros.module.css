@@ -1,0 +1,11 @@
+/*imagen y parrafo*/
+.contenido {
+    display: grid; /*muestra de arriba hacia abajo la imagen y el parrafo*/
+    gap: 4rem;
+}
+@media(min-width: 768px) {
+    .contenido {
+        grid-template-columns: repeat(2, 1fr);  /*los muestra uno al lado del otro*/
+        align-items: center; /*para que si achico la pantalla un poco, la imagen se achique en eje y,x*/
+    }
+}

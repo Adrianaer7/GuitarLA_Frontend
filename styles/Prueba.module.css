@@ -1,0 +1,39 @@
+.grid {
+    display: grid;
+    border: 1px solid red;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 10px;
+
+}
+.caja {
+    border: 1px solid black;
+    display: grid;
+    max-width: 70rem;
+}
+
+.descripcion {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:9;  /*para que del resumen se muestre como maximo 4 renglones*/
+    overflow: hidden; /*lo demas se oculta*/
+    grid-column: 2/3;
+}
+
+@media(min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(min-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media(min-width: 768px) {
+    .caja {
+        grid-template-columns: repeat(3, 1fr);
+        
+    }
+}

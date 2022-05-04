@@ -1,0 +1,43 @@
+/*todo lo negro es el footer*/
+.footer {
+    background-color: var(--negro);
+    padding: 5rem 0;
+    margin-top: 5rem;
+}
+/*abarca el nav y el parrafo*/
+@media(min-width: 768px) {
+    .contenido {
+        display: flex;  /*separa el nav del parrafo*/
+        justify-content: space-between;
+    }
+}
+
+/*nav*/
+.navegacion {
+    display: flex;
+    flex-direction: column; /*pone los enlaces en distintas columnas*/
+    align-items: center;
+}
+@media(min-width: 768px) {
+    .navegacion {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+.navegacion a {
+    font-size: 2.8rem;
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 700;
+}
+.navegacion a:hover {
+    color:var(--primary);
+}
+
+.copyright {
+    font-size: 2.8rem;
+    color: var(--blanco);
+    font-weight: 700;
+    text-align: center;
+}

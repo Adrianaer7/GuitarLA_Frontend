@@ -1,0 +1,133 @@
+.header {
+    background-image: linear-gradient(to right, rgb(0 0 0 /.8), rgb(0 0 0/ .7)), url(../public/img/header.jpg);
+    padding: 5rem 0;  /*img mas alta y sin pading a la derecha e izquierda*/
+    background-position: 50%; /*muestra el centro de la img*/
+    background-size: cover; /*el centro de la imagen ocupa todo el ancho de la pagina*/
+    position: relative; /*posiciona el contenido dentro del header sin que se salga. Se usa para la imagen de la guitarra*/
+}
+
+/*Abarca la img y el nav del header*/
+.barra {
+    display: flex;
+    flex-direction: column; /*para que se pongan la img y el nav en distintas columnas*/
+    align-items: center; /*centra el nav en el eje y*/
+}
+@media(min-width: 768px) {
+    .barra {
+       flex-direction: row; /*se ponen en distintas filas*/
+       justify-content: space-between;
+    }
+}
+
+/*Nav*/
+.navegacion {
+    margin-top: 5rem;
+    display: flex;
+    gap: 2rem;  /*separacion entre cada enlace*/
+    position: relative;
+    z-index: 1; /*para que sobresalga el elemento por encima de cualquier otro*/
+}
+@media(min-width: 768px) {
+    .navegacion {
+        margin-top: 0;
+    }
+}
+
+/*Enlaces del nav*/
+.navegacion a {
+    color: var(--blanco); /*este var hace referencia a :home que está en el global.css*/
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+.navegacion a:hover {
+    background-color: var(--primary);
+}
+
+/*para la guitarra en el header*/
+.modelo {
+    color: var(--blanco);
+    margin-top: 5rem;
+    text-align: center;
+}
+@media(min-width: 768px) {
+    .modelo {
+        text-align: left;
+        width: 50%;
+    }
+}
+.modelo h2 {
+    font-size: 8rem;
+
+}
+.modelo p:first-of-type {   /*seleeciono el primer parrafo*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;  /*para que del resumen se muestre como maximo 4 renglones*/
+    overflow: hidden; /*lo demas se oculta*/
+    font-size: 2.2rem;
+}
+
+.precio {
+    font-size: 6rem;
+    color: var(--primary);
+    font-weight: 900;
+    line-height: 0;
+}
+
+.enlace {
+    margin-top: 2rem;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--blanco);
+    border: 2px solid var(--primary);
+    padding: 1rem 5rem;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+.enlace:hover {
+    background-color: var(--primary);
+    color: var(--blanco);
+}
+
+.guitarra {
+    display: none;  /*oculto la guitarra en pantalla chica*/
+
+}
+@media(min-width: 992px) {
+    .guitarra {
+        display: block;
+        position: absolute; /*se posiciona por encima del header y del body dependiendo el tamaño de la imagen si no hay un position: relative en el .header. Si tiene un position: relative en el .header, ocupa solo la altura que tiene el header*/
+        right: 0;   /*coloco la imagen a la derecha. Los valores negativos corren la imagen hacia la izquierda*/
+        bottom: -8px;  /*coloco la imagen arriba. Los valores negativos corren la imagen hacia abajo*/
+        animation-name: mostrarImagen;
+        animation-duration: 1s;
+        animation-iteration-count: 1; /*cuantas veces se va a ejecutar la animacion*/
+        animation-delay: 0s; /*cuanto tiempo tarda la animacion en iniciarse*/
+        animation-timing-function: ease-in-out;
+    }
+}
+
+@keyframes mostrarImagen {  /*animacion de la guitarra*/
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);  /*la animacion empieza de izquierda a derecha*/
+    }
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+}

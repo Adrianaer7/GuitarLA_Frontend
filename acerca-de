@@ -1,0 +1,12 @@
+Una vez creado el proyecto, descargar los recursos del profesor
+Pegar la carpeta img y los archivos css en styles
+Crear el proyecto de strapi
+Crear las collecciones y sus campos. Habilitar find y findone desde su panel de configuracion para que se pueda hacer un get a todas las colleciones y cada articulo publicado en ella
+
+Dentro del proyecto strapi, "npm i strapi-provider-upload-cloudinary" para instalar la libreria para subir imagenes
+Dentro del proyecto strapi > config , crear plugins.js y pegar el module.exports
+Crear un .env y pegar el name, key y secret del plugin.js. Asignarle desde la pagina de cloudinary los account Details
+Reiniciar servidor strapi
+
+Subir las imagenes a cada publicacion de la coleccion, ahora se van a subir al servidor de cloudinary. que tiene 5gb gratis
+Para visualizar las imagenes en la pagina, tengo que agregar el objeto images al next.config.js
