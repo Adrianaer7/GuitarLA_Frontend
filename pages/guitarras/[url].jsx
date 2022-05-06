@@ -5,15 +5,29 @@ import styles from "../../styles/Guitarra.module.css"
 
 
 const Producto = ({guitarra, agregarCarrito}) => {
-    const [cantidad, setCantidad] = useState(1)
+    const [cantidad, setCantidad] = useState(0)
 
-    const {nombre, precio, imagen, descripcion} = guitarra
+    const {id, nombre, precio, imagen, descripcion} = guitarra
 
 
     const onSubmit = e => {
         e.preventDefault()
 
+        //Validar
+        if(isNaN(cantidad) || !cantidad || cantidad < 1 || !Number.isInteger(cantidad)) {
+            alert("Cantidad no válida")
+            return
+        }
         //Agregarlo al carrito
+        const guitarraSeleccionada = {
+            id,
+            imagen: imagen.url,
+            nombre,
+            precio,
+            cantidad
+        }
+
+        agregarCarrito(guitarraSeleccionada)    //llevo al state principal la guitarra agregada al carrito
     }
 
     return (

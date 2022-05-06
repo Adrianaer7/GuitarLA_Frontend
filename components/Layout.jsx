@@ -6,7 +6,7 @@ import Header from "./Header"
 
 const Layout = ({children, pagina, guitarra}) => {    //importo el titulo de cada pagina
     return (
-       <div>
+       <div className="flexible">
            <Head>
                 <title>GitarLA - {pagina}</title>
                 <meta name="description" content="Sitio web de venta de guitarras"/>

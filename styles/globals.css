@@ -32,3 +32,9 @@ img {
   color: var(--primary);
   margin: 5rem 0;
 }
+[class*="flexible"] { /*agrego esto para que el footer esté siempre abajo de todo y no se corra arriba cuando el contenido de la pagina no llena la pantalla*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
